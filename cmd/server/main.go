@@ -1,10 +1,9 @@
 package main
-
 import (
     "log"
     "net/http"
-    "[github.com/2006michigun2006-hub/cs2-livedrop/internal/auth](https://github.com/2006michigun2006-hub/cs2-livedrop/internal/auth)"
-    "[github.com/2006michigun2006-hub/cs2-livedrop/internal/gsi](https://github.com/2006michigun2006-hub/cs2-livedrop/internal/gsi)"
+    "github.com/2006michigun2006-hub/cs2-livedrop/internal/auth"
+    "github.com/2006michigun2006-hub/cs2-livedrop/internal/gsi"
 )
 func main() {
     log.Println("Starting CS2 LiveDrop Server...")
