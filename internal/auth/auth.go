@@ -3,7 +3,7 @@ import "errors"
 type User struct {
     ID       int
     Username string
-    Password string // Hash
+    Password string 
 }
 type Service struct {
 }
