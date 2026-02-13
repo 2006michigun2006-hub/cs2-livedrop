@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LiveDrop Case Simulator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500;700&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="texture"></div>
+    <div id="specialDropOverlay" class="special-drop-overlay" aria-hidden="true">
+      <img id="specialDropSkull" src="https://pngfre.com/wp-content/uploads/1000117573-269x300.png" alt="Trollface drop effect" />
+    </div>
+    <div class="sim-shell">
+      <nav class="top-nav">
+        <div class="brand-wrap">
+          <p class="tag">CS2 LIVEDROP</p>
+          <h1>Case Simulator</h1>
+        </div>
+        <div class="invite-chip" id="inviteLabel">Loading invite...</div>
+        <div class="auth-wrap">
+          <span id="authStatePill" class="auth-pill">Guest</span>
+          <div class="profile-mini">
+            <div class="profile-id">
+              <p id="profileName">Not logged in</p>
+              <small id="profileSteam">Steam ID: -</small>
+            </div>
+            <div class="profile-balance">
+              <small>Balance</small>
+              <strong id="profileBalance">$0.00</strong>
+            </div>
+          </div>
+          <a id="steamJoinLink" class="steam nav-steam" href="#">Steam Login</a>
+          <button id="logoutBtn" class="ghost nav-logout" type="button" style="display: none;">Logout</button>
+        </div>
+      </nav>
+
+      <main class="container">
+        <section class="stage-grid">
+          <article class="panel stage-panel">
+            <div class="panel-head">
+              <h2>Case Opening Arena</h2>
+              <span class="hint">Drop line centered under marker</span>
+            </div>
+            <div id="caseWindow" class="cs2-case-window">
+              <div class="cs2-vignette-left"></div>
+              <div class="cs2-vignette-right"></div>
+              <div class="cs2-center-marker"></div>
+              <div class="cs2-reel" id="caseReel"></div>
+            </div>
+            <div id="openStatus" class="open-status"></div>
+          </article>
+        </section>
+
+        <section class="panel crowdfunding-float" id="crowdfundingSection" style="display:none;">
+          <div class="panel-head">
+            <h2>Live Crowdfunding Event</h2>
+            <span class="hint" id="campaignStatusHint">Waiting for active campaign</span>
+          </div>
+          <div class="campaign-view">
+            <div class="campaign-reward">
+              <img id="campaignRewardIcon" alt="Reward icon" />
+              <div>
+                <p id="campaignRewardType">Reward</p>
+                <h3 id="campaignRewardName">No active campaign</h3>
+              </div>
+            </div>
+            <div class="campaign-progress-wrap">
+              <div class="campaign-progress"><div class="campaign-progress-bar" id="campaignProgressBar"></div></div>
+              <p id="campaignProgressText">0 / 0</p>
+            </div>
+            <div class="campaign-donate">
+              <input id="campaignDonateAmount" type="number" min="1" step="1" value="2" />
+              <button id="campaignDonateBtn" type="button">Donate</button>
+            </div>
+            <p id="campaignChanceText">Your chance: 0%</p>
+          </div>
+        </section>
+
+        <section class="panel inventory-panel">
+          <div class="panel-head">
+            <h2>Inventory</h2>
+            <button id="refreshInventory" class="ghost refresh-btn">Refresh</button>
+          </div>
+          <div id="inventoryGrid" class="inventory-grid"></div>
+        </section>
+
+        <p id="status">Ready.</p>
+      </main>
+    </div>
+    <div id="eventToast" class="event-toast" style="display:none;"></div>
+
+    <script src="/simulator.js" defer></script>
+  </body>
+</html>
